@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+  xmlns="http://www.concrete5.org/doctrine-xml/0.5"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.concrete5.org/doctrine-xml/0.5 http://concrete5.github.io/doctrine-xml/doctrine-xml-0.5.xsd">
+
+  <!-- Stores the settings of each attribute based on this type -->
+  <table name="atRelatedPagesSettings">
+    <field name="akID" type="integer" size="10">
+      <unsigned/>
+      <key/>
+      <default value="0"/>
+    </field>
+    <field name="pageTypeId" type="integer" size="10"/>
+  </table>
+
+  <!-- Stores the values of the attributes, for each page that uses it -->
+  <table name="atRelatedPages">
+    <field name="avID" type="integer" size="10">
+      <unsigned/>
+      <key/>
+    </field>
+    <field name="pageId" type="integer" size="10">
+      <key/>
+    </field>
+    <index name="avID">
+      <col>avID</col>
+    </index>
+  </table>
+
+</schema>
